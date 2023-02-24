@@ -1,6 +1,7 @@
 import React from "react";
 import * as Yup from 'yup';
-import { Field, Form, Formik, ErrorMessage } from "formik";
+import { Formik, ErrorMessage } from "formik";
+import { Field, Form, FormField, SubmitButton } from "./BookForm.style";
 
 const BookSchema = Yup.object().shape({
     name: Yup.string().required("Required"),
@@ -21,18 +22,17 @@ export const BookForm = () => {
     >
 
     <Form>
-      <label>
+      <FormField>
         Name
-        <Field name="name" placeholder="Contact name" />
-        <ErrorMessage name="name"/>
-      </label>
-      <br />
-      <label>
+        <Field name="name" placeholder="Contact name"/>
+        <ErrorMessage name="name" component="div"/>
+      </FormField>
+      <FormField>
         Number
         <Field name="number" placeholder="Phone number" type="tel"/>
-        <ErrorMessage name="number"/>
-      </label>
-      <button type="submit">Add contact</button>
+        <ErrorMessage name="number" component="div"/>
+      </FormField>
+      <SubmitButton type="submit">Add contact</SubmitButton>
     </Form>
   </Formik>
 }
