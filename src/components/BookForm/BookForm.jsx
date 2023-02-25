@@ -2,6 +2,7 @@ import React from "react";
 import * as Yup from 'yup';
 import { Formik, ErrorMessage } from "formik";
 import { Field, Form, FormField, SubmitButton } from "./BookForm.style";
+import { nanoid } from "nanoid";
 
 const BookSchema = Yup.object().shape({
     name: Yup.string().required("Required"),
@@ -9,18 +10,16 @@ const BookSchema = Yup.object().shape({
     .required("Required"),
   });
 
-export const BookForm = () => {
+export const BookForm = ({onAddContact}) => {
     return  <Formik
     initialValues={{
       name: '',
       number: '',
     }}
     validationSchema={BookSchema}
-    onSubmit={values => {
-      console.log(values);
-    }}
-    >
-
+    onSubmit={(values, actions) => {
+      onAddContact({...values, id: nanoid()});
+      actions.resetForm()}}>
     <Form>
       <FormField>
         Name

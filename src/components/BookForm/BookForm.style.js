@@ -8,26 +8,32 @@ flex-direction: column;
 gap: 16px;
 padding: 30px 20px;
 width: 500px;
+height: fit-content;
 background-color: #ffffff;
 border-radius: 8px;
-background: rgba(255, 255, 255, 0.2);
+background: rgba(255, 255, 255, 0.29);
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
+backdrop-filter: blur(6px);
+-webkit-backdrop-filter: blur(6px);
+border: 1px solid rgba(255, 255, 255, 0.25);
 `;
 
 export const Field = styled(BookInput)`
-font-size: 20px;
-padding: 4px;
+font-size: 22px;
+padding: 5px;
 border-radius: 6px;
 border: 2px solid blue;
-`
+`;
 
 export const FormField = styled.label`
 display: flex;
 flex-direction: column;
 gap: 5px;
+`;
+
+export const Wrapper = styled.div`
+display: flex;
+gap: 20px;
 `;
 
 export const SubmitButton = styled.button`
@@ -59,4 +65,4 @@ display: block;
  box-shadow: inset 0px 0.1em 0.6em #3c4fe0;
  transform: translateY(0em);
 }
-`
+`;

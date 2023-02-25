@@ -1,8 +1,10 @@
-import { ContactListItem } from "./ContactListItem"
+import React from "react"
 
-export const ContactList = () => {
-    return <div>
+export const ContactList = ({ children }) => {
+    return (
+    <div>
         <h2>Contacts</h2>
-        <ContactListItem/>
+        {children}
     </div>
+    )
 }
