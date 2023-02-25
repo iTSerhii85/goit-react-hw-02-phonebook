@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from "react";
 
 import { FilterInput, FilterLabel } from "./Filter.style"
@@ -14,3 +15,8 @@ export const Filter = ({ value, onChange }) => {
         </FilterLabel>
     )
 };
+
+Filter.protoType = {
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+}

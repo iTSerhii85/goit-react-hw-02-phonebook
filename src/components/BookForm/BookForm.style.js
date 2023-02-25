@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { Form as BookForm } from "formik";
-import { Field as BookInput } from "formik";
+import { Form as BookForm, Field as BookInput, ErrorMessage as formikError } from "formik";
 
 export const Form = styled(BookForm)`
 display: flex;
@@ -66,3 +65,8 @@ display: block;
  transform: translateY(0em);
 }
 `;
+
+export const ErrorMessage = styled(formikError)`
+color: red;
+font-weight: bold;
+`
